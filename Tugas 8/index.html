@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Trapesium</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+      <section class="section">
+         <div class="container">
+            <div class="box">
+               <h1 class="title has-text-centered">Hitung Luas dan Keliling Trapesium</h1>
+               <div class="field">
+                  <label class="label">Pilih Jenis Perhitungan</label>
+                  <div class="control">
+                     <div class="select is-fullwidth">
+                        <select id="jenis">
+                           <option value="luas">Luas</option>
+                           <option value="keliling">Keliling</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+
+               <div id="inputLuas">
+               <div class="field">
+                  <label class="label">Alas Atas (a)</label>
+                  <div class="control">
+                     <input id="a" class="input" type="number" placeholder="Masukkan alas atas">
+                  </div>
+               </div>
+
+               <div class="field">
+               <label class="label">Alas Bawah (b)</label>
+               <div class="control">
+                  <input id="b" class="input" type="number" placeholder="Masukkan alas bawah">
+               </div>
+               </div>
+
+               <div class="field">
+               <label class="label">Tinggi (t)</label>
+               <div class="control">
+                  <input id="t" class="input" type="number" placeholder="Masukkan tinggi">
+               </div>
+               </div>
+               </div>
+
+               <div id="inputKeliling" style="display: none;">
+          <div class="field">
+            <label class="label">Sisi A</label>
+            <div class="control">
+              <input id="ka" class="input" type="number" placeholder="Masukkan sisi A">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Sisi B</label>
+            <div class="control">
+              <input id="kb" class="input" type="number" placeholder="Masukkan sisi B">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Sisi C</label>
+            <div class="control">
+              <input id="kc" class="input" type="number" placeholder="Masukkan sisi C">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Sisi D</label>
+            <div class="control">
+              <input id="kd" class="input" type="number" placeholder="Masukkan sisi D">
+            </div>
+          </div>
+               </div>
+
+               <div class="field mt-4">
+                  <button id="btnHitung" class="button is-link is-fullwidth">Hitung</button>
+               </div>
+
+               <div class="content has-text-centered mt-4">
+                  <p id="hasil" class="result"></p>
+                  <p id="ukuran" class="result"></p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <script src="script.js"></script>
+   </body>
+</html>
