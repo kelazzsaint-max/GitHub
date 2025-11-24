@@ -1,0 +1,139 @@
+/* Navbar utama */
+.navbar {
+  background: linear-gradient(135deg, #32CD32, #006400);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Burger menu (mobile) */
+.navbar-burger span {
+  background-color: lightgreen;
+}
+
+.navbar-burger.is-active span {
+  background-color: #fff; 
+}
+
+/* Item menu */
+.navbar .navbar-item {
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Hover efek navbar */
+.navbar .navbar-item:hover {
+  background: linear-gradient(135deg, #32CD32, #006400);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transform: scale(1.01);
+}
+
+a.navbar-item{
+  color: #000 !important;
+}
+
+/* === Aturan khusus untuk mobile === */
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;      /* muncul tepat di bawah navbar */
+    left: 0;
+    width: 100%;
+    background-color: white; /* biar kontras */
+    z-index: 1000;  /* pastikan di depan konten */
+  }
+
+  /* Saat burger ditekan (is-active), tampilkan */
+  .navbar-menu.is-active {
+    display: block;
+  }
+}
+
+/* Sidebar box */
+.menu.box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu.box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.menu-label {
+  font-weight: 600;
+  color: #2e7d32; /* hijau pesantren */
+  margin-bottom: 0.5rem;
+}
+
+.menu-list li a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+.menu-list li a:hover {
+  background: linear-gradient(135deg, #32CD32, #006400);
+  color: #fff;
+  transform: scale(1.02);
+}
+
+/* Hilangkan jarak antara hero dan navbar */
+.hero.custom-hero {
+  margin-bottom: 0 !important;
+}
+
+/* Hilangkan jarak atas section agar rapat dengan navbar */
+.section {
+  margin-top: 0 !important;
+  padding-top: 1rem; /* boleh kecilkan sesuai kebutuhan */
+}
+
+
+/* Desktop styling */
+@media screen and (min-width: 1024px) {
+  .navbar-menu {
+    justify-content: center;
+  }
+
+  .navbar-start {
+    margin: 0;
+  }
+
+  .navbar-item {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.3rem;
+  }
+}
+
+/* Responsif sidebar di tablet */
+@media screen and (max-width: 1024px) {
+  .column.is-one-fifth-desktop {
+    flex: 0 0 33.3333%; 
+  }
+}
+
+/* Responsif sidebar di HP */
+@media screen and (max-width: 768px) {
+  .column.is-one-fifth-desktop {
+    flex: 0 0 100%;
+    margin-top: 1rem;
+  }
+}

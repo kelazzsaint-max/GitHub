@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulir Pendaftaran</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/nav dan sidebar.css" />
+    <link rel="stylesheet" href="css/input dan button.css" />
+  </head>
+  <body>
+
+    <!-- Video Latar Belakang -->
+    <div class="bg-video">
+      <iframe 
+        src="https://www.youtube.com/embed/4jv8tlYjhTI?autoplay=1&mute=1&loop=1&playlist=4jv8tlYjhTI&controls=0&modestbranding=1&showinfo=0&rel=0"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Overlay transparan -->
+    <div class="overlay"></div>
+
+    <!-- Navbar -->
+    <div class="sticky">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuUtama">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarMenuUtama" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="beranda.html">Beranda</a>
+            <a class="navbar-item" href="galeri.html">Galeri</a>
+            <a class="navbar-item" href="kajianrutin.html">Kajian Rutin</a>
+            <a class="navbar-item" href="prestasi.html">Prestasi</a>
+            <a class="navbar-item" href="galerikegiatan.html">Kegiatan</a>
+            <a class="navbar-item" href="donasi.html">Donasi</a>
+            <a class="navbar-item" href="index.html">Halaman Utama</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Formulir -->
+    <section class="section">
+      <div class="container">
+        <form class="custom-form box p-5" method="post" action="#">
+          <h3 class="title is-3 has-text-centered">Formulir Pendaftaran</h3>
+
+          <!-- Nama -->
+          <div class="field">
+            <label class="label" for="nama">Nama Lengkap Santri</label>
+            <div class="control">
+              <input class="input" type="text" id="nama" name="nama" required />
+            </div>
+          </div>
+
+          <!-- TTL -->
+          <div class="field">
+            <label class="label" for="ttl">Tempat, Tanggal Lahir</label>
+            <div class="control">
+              <input class="input" type="text" id="ttl" name="ttl" required />
+            </div>
+          </div>
+
+          <!-- Jenis Kelamin -->
+          <div class="field">
+            <label class="label" for="jk">Jenis Kelamin</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select id="jk" name="jk" required>
+                  <option value="">-- Pilih Jenis Kelamin --</option>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                  <option value="Lainnya">Lainnya</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Asal Sekolah -->
+          <div class="field">
+            <label class="label" for="asal">Asal Sekolah</label>
+            <div class="control">
+              <input class="input" type="text" id="asal" name="asal" required />
+            </div>
+          </div>
+
+          <!-- Alamat -->
+          <div class="field">
+            <label class="label" for="alamat">Alamat Lengkap</label>
+            <div class="control">
+              <textarea class="textarea" id="alamat" name="alamat" rows="4" required></textarea>
+            </div>
+          </div>
+
+          <!-- Nama Wali -->
+          <div class="field">
+            <label class="label" for="ortu">Nama Orang Tua/Wali</label>
+            <div class="control">
+              <input class="input" type="text" id="ortu" name="ortu" required />
+            </div>
+          </div>
+
+          <!-- Nomor Kontak -->
+          <div class="field">
+            <label class="label" for="kontak">Nomor Kontak Orang Tua/Wali</label>
+            <div class="control">
+              <input class="input" type="tel" id="kontak" name="kontak" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,13}" required />
+            </div>
+          </div>
+
+          <!-- Persyaratan Dokumen -->
+          <div class="field">
+            <label class="label">Persyaratan Dokumen</label>
+            <ol class="requirements">
+              <li>Fotokopi Kartu Keluarga (KK)</li>
+              <li>Legalisir Ijazah TK/SD/SMP atau Raport terakhir</li>
+              <li>Fotokopi Akta Kelahiran</li>
+              <li>Surat Keterangan Sehat</li>
+              <li>Surat Pernyataan Restu & Izin dari orangtua/wali</li>
+            </ol>
+          </div>
+
+          <!-- Tombol -->
+          <div class="field is-grouped is-justify-content-center">
+            <div class="control">
+              <button class="button is-primary" type="submit">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-light" type="reset">Reset</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        if ($navbarBurgers.length > 0) {
+            $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+.footer {
+  background: linear-gradient(135deg, #228B22, #006400);
+  padding: 35px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
+  border-top: 3px solid greenyellow;
+  transition: background 0.3s, color 0.3s;
+}
+
+.footer p,
+.footer h1,
+.footer h2,
+.footer h3 {
+  margin: 5px 0;
+}
+
+.footer .social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: white;
+  color: #333;
+  font-size: 18px;
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s;
+}
+
+.footer .social-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  color: white;
+  background: #228B22;
+}
+
+.footer .content.has-text-centered {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #f0f0f0;
+}
+
+.footer p a:hover {
+  color: lightgreen !important;
+}
+
+.footer .column {
+  margin-bottom: 20px;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 25px 15px;
+    text-align: center;
+  }
+
+  .footer .social-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .footer .content.has-text-centered {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer .social-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .footer .content.has-text-centered {
+    font-size: 11px;
+  }
+}
+

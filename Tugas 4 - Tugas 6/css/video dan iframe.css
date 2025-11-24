@@ -1,0 +1,103 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr-1LxHwirxy04rd54rAzv0USj8ETfYb6Mu7FLi0kdNpOqUZo55029XXoIwCpLvrdCaVnpBA4ChYV1U2-rhj9eFldZsXXOWqCA6C0KpnCVthYAU7znL0upEvcyni1cBxrT3lyjn=w1080-h720-k-no")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Overlay transparan biar teks terbaca */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6); /* putih transparan 60% */
+  z-index: -1;
+}
+
+p {
+  color: #000 !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+.navbar .navbar-item {
+  color: black;
+  font-weight: 600;
+}
+
+/* Judul dan subtitle */
+h1.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: rgba(5, 15, 120, 0.976);
+}
+
+h2.subtitle,
+.title.is-4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #001111;
+}
+
+/* Efek untuk video embed (iframe dalam figure.image.has-ratio) */
+.figure,
+.image {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.figure .has-ratio,
+.image .has-ratio {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image .has-ratio:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Kolom & jarak padding antar kolom */
+.columns {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.column {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* Responsif tambahan */
+
+@media (max-width: 768px) {
+  h1.title {
+    font-size: 1.7rem;
+  }
+}
+
+h4.subtitle {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 1.5rem 0;
+  }
+}

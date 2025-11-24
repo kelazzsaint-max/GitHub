@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: url("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrGecD8aTvYwu8D-n3hU1pTB-7cs7KwXZe6EV0hcU-c-pBbIs_sZTWcczmcD0ygsAwzldjeE3-kcXEIRMiQCkAxB4ruCHxHy0oExRXW4aHEVbEdouOF4RMgqDdU5ysDzZg4mCNC=s1360-w1360-h1020-rw")
+    no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* overlay gelap biar teks default terbaca */
+  z-index: -1;
+}
+
+body,
+body * {
+  color: #000 !important;
+}
+
+div.column {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h1,
+p.subtitle {
+  color: white !important;
+}
+
+/* Tombol Menu Utama */

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Dokumentasi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/nav dan sidebar.css" />
+    <link rel="stylesheet" href="css/video dan iframe.css" />
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <div class="sticky">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuUtama">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarMenuUtama" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="beranda.html">Beranda</a>
+            <a class="navbar-item" href="galeri.html">Galeri</a>
+            <a class="navbar-item" href="kajianrutin.html">Kajian Rutin</a>
+            <a class="navbar-item" href="prestasi.html">Prestasi</a>
+            <a class="navbar-item" href="galerikegiatan.html">Kegiatan</a>
+            <a class="navbar-item" href="donasi.html">Donasi</a>
+            <a class="navbar-item" href="index.html">Halaman Utama</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <section class="section">
+      <div class="container has-text-centered">
+        <h1 class="title">Galeri Dokumentasi</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio"
+                      src="https://www.youtube.com/embed/4wvnFDADPX4"
+                      title="Video 1"
+                      allowfullscreen>
+              </iframe>
+            </figure>
+          </div>
+
+          <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio"
+                      src="https://www.youtube.com/embed/Qy4o-5BRFhM"
+                      title="Video 2"
+                      allowfullscreen>
+              </iframe>
+            </figure>
+          </div>
+
+          <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio"
+                      src="https://www.youtube.com/embed/cDmJC8w4XBQ"
+                      title="Video 3"
+                      allowfullscreen>
+              </iframe>
+            </figure>
+          </div>
+
+          <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio"
+                      src="https://www.youtube.com/embed/xhTwmsZyz9Q"
+                      title="Video 4"
+                      allowfullscreen>
+              </iframe>
+            </figure>
+          </div>
+
+          <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio"
+                      src="https://www.youtube.com/embed/3E5SbzL3ozE"
+                      title="Video 5"
+                      allowfullscreen>
+              </iframe>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        if ($navbarBurgers.length > 0) {
+            $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
