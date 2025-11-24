@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Bangun Datar,Ruang,Dan Data Keluarga</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="mobile-top">
+        <div style="display: flex; align-items: center; gap: 0.8rem">
+          <div class="burger is-active" id="menuToggle" aria-label="Toggle menu" role="button">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+      <h1 class="title is-4">
+        Kalkulator Bangun Datar Dan Ruang + Data Keluarga
+      </h1>
+      <p class="subtitle is-6">Luas & Keliling — Volume & Luas Permukaan — Data Keluarga</p>
+    </header>
+
+    <nav class="navbar is-light is-fixed-left" id="sideNavbar">
+      <div class="navbar-menu is-active">
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem">
+          <button class="navbar-close" id="closeNavbar" aria-label="Close menu" style="background: none;border: none;cursor: pointer;font-size: 1.5rem;color: black;">
+            ✕
+          </button>
+        </div>
+        <div class="navbar-start is-flex is-flex-direction-column">
+          <p class="menu-label">Bangun Datar</p>
+          <a class="navbar-item" href="#persegi" data-section="persegi">Persegi</a>
+          <a class="navbar-item" href="#persegiPanjang" data-section="persegiPanjang">Persegi Panjang</a>
+          <a class="navbar-item" href="#segitiga" data-section="segitiga">Segitiga</a>
+          <a class="navbar-item" href="#lingkaran" data-section="lingkaran">Lingkaran</a>
+          <hr class="navbar-divider" />
+          <p class="menu-label">Bangun Ruang</p>
+          <a class="navbar-item" href="#kubus" data-section="kubus">Kubus</a>
+          <a class="navbar-item" href="#balok" data-section="balok">Balok</a>
+          <a class="navbar-item" href="#tabung" data-section="tabung">Tabung</a>
+          <a class="navbar-item" href="#bola" data-section="bola">Bola</a>
+          <hr class="navbar-divider" />
+          <p class="menu-label">Data Keluarga</p>
+          <a class="navbar-item" href="#keluarga" data-section="keluarga">Data Keluarga</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="navbar-overlay" id="navbarOverlay"></div>
+
+    <div class="app-wrap">
+      <main class="content-area">
+        <div id="content-container"></div>
+      </main>
+    </div>
+
+    <template id="template-persegi">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Persegi</p>
+        </header>
+        <div class="card-content">
+          <div class="form-row">
+            <label class="label">Sisi (s)</label>
+            <input type="number" class="input" id="d_persegi_s" min="0" />
+          </div>
+          <div class="btn-row">
+            <button class="button is-link btn-calc" data-calc="persegi">Hitung</button>
+            <button class="button is-light btn-reset" data-reset="persegi">Reset</button>
+          </div>
+          <div class="result" id="r_persegi"></div>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-persegiPanjang">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Persegi Panjang</p>
+        </header>
+        <div class="card-content">
+          <div class="form-row">
+            <label class="label">Panjang (p)</label>
+            <input class="input" id="d_pp_p" type="number" min="0" />
+          </div>
+          <div class="form-row">
+            <label class="label">Lebar (l)</label>
+            <input class="input" id="d_pp_l" type="number" min="0" />
+          </div>
+          <div class="btn-row">
+            <button class="button is-link btn-calc" data-calc="pp">Hitung</button>
+            <button class="button is-light btn-reset" data-reset="pp">Reset</button>
+          </div>
+          <div class="result" id="r_pp"></div>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-segitiga">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Segitiga</p>
+        </header>
+        <div class="card-content">
+          <div class="form-row">
+            <label class="label">Alas (a)</label>
+            <input class="input" id="d_sg_a" type="number" min="0" />
+          </div>
+          <div class="form-row">
+            <label class="label">Tinggi (t)</label>
+            <input class="input" id="d_sg_t" type="number" min="0" />
+          </div>
+          <div class="form-row">
+            <label class="label">Sisi b</label>
+            <input class="input" id="d_sg_b" type="number" min="0" />
+          </div>
+          <div class="form-row">
+            <label class="label">Sisi c</label>
+            <input class="input" id="d_sg_c" type="number" min="0" />
+          </div>
+          <div class="btn-row">
+            <button class="button is-link btn-calc" data-calc="segitiga">Hitung</button>
+            <button class="button is-light btn-reset" data-reset="segitiga">Reset</button>
+          </div>
+          <div class="result" id="r_sg"></div>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-lingkaran">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Lingkaran</p>
+        </header>
+        <div class="card-content">
+          <div class="form-row">
+            <label class="label">Jari-jari (r)</label>
+            <input class="input" id="d_lg_r" type="number" min="0" />
+          </div>
+          <div class="btn-row">
+            <button class="button is-link btn-calc" data-calc="lingkaran">Hitung</button>
+            <button class="button is-light btn-reset" data-reset="lingkaran">Reset</button>
+          </div>
+          <div class="result" id="r_lg"></div>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-kubus">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Kubus</p>
+        </header>
+        <div class="card-content">
+          <div class="form-row">
+            <label class="label">Sisi (s)</label>
+            <input class="input" id="r_kubus_s" type="number" min="0" />
+          </div>
+          <div class="btn-row">
+            <button class="button is-link btn-calc" data-calc="kubus">Hitung</button>
+            <button class="button is-light btn-reset" data-reset="kubus">Reset</button>
+          </div>
+          <div class="result" id="res_kubus"></div>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-balok">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Balok</p>
+        </header>
+        <div class="card-content">
+          <div class="form-row">
+            <label class="label">Panjang (p)</label>
+            <input class="input" id="r_balok_p" type="number" min="0" />
+          </div>
+          <div class="form-row">
+            <label class="label">Lebar (l)</label>
+            <input class="input" id="r_balok_l" type="number" min="0" />
+          </div>
+          <div class="form-row">
+            <label class="label">Tinggi (t)</label>
+            <input class="input" id="r_balok_t" type="number" min="0" />
+          </div>
+          <div class="btn-row">
+            <button class="button is-link btn-calc" data-calc="balok">Hitung</button>
+            <button class="button is-light btn-reset" data-reset="balok">Reset</button>
+          </div>
+          <div class="result" id="res_balok"></div>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-tabung">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Tabung</p>
+        </header>
+        <div class="card-content">
+          <div class="form-row">
+            <label class="label">Jari-jari (r)</label>
+            <input class="input" id="r_tb_r" type="number" min="0" />
+          </div>
+          <div class="form-row">
+            <label class="label">Tinggi (t)</label>
+            <input class="input" id="r_tb_t" type="number" min="0" />
+          </div>
+          <div class="btn-row">
+            <button class="button is-link btn-calc" data-calc="tabung">Hitung</button>
+            <button class="button is-light btn-reset" data-reset="tabung">Reset</button>
+          </div>
+          <div class="result" id="res_tabung"></div>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-bola">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Bola</p>
+        </header>
+        <div class="card-content">
+          <div class="form-row">
+            <label class="label">Jari-jari (r) </label>
+            <input class="input" id="r_bl_r" type="number" min="0" />
+          </div>
+          <div class="btn-row">
+            <button class="button is-link btn-calc" data-calc="bola">Hitung</button>
+            <button class="button is-light btn-reset" data-reset="bola">Reset</button>
+          </div>
+          <div class="result" id="res_bola"></div>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-keluarga">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Kelola Data Keluarga</p>
+        </header>
+        <div class="card-content">
+          <div class="form-section">
+            <div class="form-row">
+              <label class="label">Nama Lengkap</label>
+              <input type="text" class="input" id="fam_nama" placeholder="Masukkan nama lengkap" />
+            </div>
+
+            <div class="form-row">
+              <label class="label">Umur</label>
+              <input type="number" class="input" id="fam_umur" min="0" placeholder="Masukkan umur" />
+            </div>
+
+            <div class="form-row">
+              <label class="label">Jenis Kelamin</label>
+              <div class="select is-fullwidth">
+                <select id="fam_jk">
+                  <option value="">-- Pilih --</option>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="label">Hubungan Keluarga</label>
+              <div class="select is-fullwidth">
+                <select id="fam_hubungan">
+                  <option value="">-- Pilih --</option>
+                  <option value="Ayah">Ayah</option>
+                  <option value="Ibu">Ibu</option>
+                  <option value="Anak">Anak</option>
+                  <option value="kakak">Kakek</option>
+                  <option value="Nenek">Nenek</option>
+                  <option value="Saudara">Saudara</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="label">Pekerjaan</label>
+              <input type="text" class="input" id="fam_pekerjaan" placeholder="Masukkan pekerjaan" />
+            </div>
+
+            <div class="form-row">
+              <label class="label">No. Telepon</label>
+              <input type="tel" class="input" id="fam_telp" placeholder="Masukkan nomor telepon" />
+            </div>
+
+            <div class="form-row">
+              <label class="label">Alamat</label>
+              <textarea class="textarea" id="fam_alamat" rows="2" placeholder="Masukkan alamat lengkap"></textarea>
+            </div>
+
+            <div class="btn-row" style="margin-top: 1rem;display: flex;gap: 0.5rem;flex-wrap: wrap;">
+              <button class="button is-link" id="btn_tambah_keluarga">Tambahkan</button>
+              <button class="button is-warning" id="btn_edit_keluarga" style="display: none">Ubah</button>
+              <button class="button is-light" id="btn_batal_keluarga">Batal</button>
+            </div>
+          </div>
+
+          <div class="table-section" style="margin-top: 2rem">
+            <h3 class="subtitle is-6">Daftar Anggota Keluarga</h3>
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth" id="tbl_keluarga">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Hubungan</th>
+                    <th>Pekerjaan</th>
+                    <th>Telepon</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_keluarga"></tbody>
+              </table>
+              <p id="pesan_kosong" style="text-align: center; color: #999; margin-top: 1rem">Belum ada data keluarga. Tambahkan anggota keluarga baru.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <footer class="site-footer">
+      <p>© 2025 Kalkulator Bangun Datar,Ruang,Dan Data Keluarga</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
