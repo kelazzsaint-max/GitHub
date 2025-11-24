@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Pendaftaran</title>
+  </head>
+  <body>
+    <h1>📝 Formulir Pendaftaran</h1>
+
+    <form>
+      <fieldset>
+        <legend>Data Pribadi</legend>
+
+        <label for="nama"><b>Nama:</b></label
+        ><br />
+        <input type="text" id="nama" name="nama" required /><br /><br />
+
+        <label for="email"><b>Email:</b></label
+        ><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="password"><b>Kata Sandi:</b></label
+        ><br />
+        <input type="password" id="password" name="password" required /><br /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Informasi Tambahan</legend>
+
+        <label for="jk"><b>Jenis Kelamin:</b></label
+        ><br />
+        <select id="jk" name="jk" required>
+          <option value="">-- Pilih Jenis Kelamin --</option>
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+          <option value="Lainnya">Lainnya</option></select
+        ><br /><br />
+
+        <label><b>Status:</b></label
+        ><br />
+        <input type="radio" name="status" value="Nikah" required /> Nikah
+        <input type="radio" name="status" value="Belum Nikah" /> Belum Nikah
+        <input type="radio" name="status" value="Cerai" /> Cerai<br /><br />
+
+        <label for="alamat"><b>Alamat:</b></label
+        ><br />
+        <textarea id="alamat" name="alamat" rows="4" cols="50" required ></textarea
+        ><br /><br />
+      </fieldset>
+
+      <button type="submit">Kirim</button>
+      <button type="reset">Reset</button>
+    </form>
+
+    <hr />
+    <p><a href="index.html">← Kembali ke Beranda</a></p>
+  </body>
+</html>
