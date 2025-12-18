@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ambil Antrian</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="icon" type="image/png" href="/HOME/klinik 1.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body class="theme-patient">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://drivonne.apotekcahayaibu.id">
+          <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" width="28" height="28"/>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="mainMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a id="menuDashboard" href="/Dokter/dokter.html" class="navbar-item">Dashboard</a>
+          <a href="pasien.html" class="navbar-item">Ambil Antrian</a>
+          <a href="../Riwayat/riwayat.html" class="navbar-item">Riwayat</a>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const burger = document.querySelector(".navbar-burger");
+        const menu = document.getElementById(burger.dataset.target);
+
+        burger.addEventListener("click", () => {
+          burger.classList.toggle("is-active");
+          menu.classList.toggle("is-active");
+        });
+      });
+    </script>
+
+    <section class="hero is-info">
+      <div class="hero-body">
+        <h1 class="title has-text-centered">Ambil Antrian Pasien</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="subtitle is-4">Forum Ambil Antrian</h2>
+            <div class="field">
+              <label class="label">Nama Lengkap</label>
+              <input id="nama" class="input" type="text" placeholder="Nama lengkap pasien"/>
+            </div>
+
+            <div class="field">
+              <label class="label">Umur</label>
+              <input id="umur" class="input" type="number" placeholder="Umur pasien"/>
+            </div>
+
+            <div class="field">
+              <label class="label">Jenis Kelamin</label>
+              <div class="select is-fullwidth">
+                <select id="jk">
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Alamat / Tempat Tinggal</label>
+              <input id="alamat" class="input" type="text" placeholder="Alamat pasien"/>
+            </div>
+
+            <div class="field">
+              <label class="label">Keluhan</label>
+              <textarea id="keluhan" class="textarea" placeholder="Tuliskan keluhan Anda..."></textarea>
+            </div>
+
+            <div class="field">
+              <label class="label">Pilih Poli</label>
+              <div class="select is-fullwidth">
+                <select id="poli">
+                  <option value="Umum">Umum</option>
+                  <option value="Anak">Anak</option>
+                  <option value="Gigi">Gigi</option>
+                  <option value="Kandungan">Kandungan</option>
+                </select>
+              </div>
+            </div>
+
+            <button id="ambil" class="button is-primary is-fullwidth mt-3">Ambil Antrian</button>
+            <p id="info" class="has-text-danger mt-3"></p>
+            <div id="statusAntrian" class="notification is-info mt-4" style="display: none"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../data/antriandata.js"></script>
+    <script src="pasien.js"></script>
+
+  </body>
+</html>

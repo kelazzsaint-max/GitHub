@@ -1,0 +1,92 @@
+body {
+  min-height: 100vh;
+}
+
+.theme-doctor {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.theme-doctor .hero {
+  background: transparent;
+}
+
+.theme-doctor .box,
+.theme-doctor .table {
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.theme-doctor .title {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .box {
+    padding: 1rem;
+  }
+
+  .theme-doctor .hero .title {
+    font-size: 1.25rem;
+  }
+  .theme-doctor .title {
+    font-size: 1.05rem;
+  }
+
+  .theme-doctor .table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .theme-doctor table thead th,
+  .theme-doctor table tbody td {
+    white-space: nowrap;
+  }
+
+  .theme-doctor .box,
+  .theme-doctor .card {
+    padding: 0.75rem;
+  }
+
+  .theme-doctor .card .title {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .theme-doctor .card-content {
+    padding: 0.75rem;
+  }
+
+  .theme-doctor .button {
+    padding: 0.5rem 0.75rem;
+    font-size: 14px;
+  }
+
+  .theme-doctor .navbar .navbar-item {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-doctor .hero .title {
+    font-size: 1.05rem;
+  }
+
+  .theme-doctor .title {
+    font-size: 0.98rem;
+  }
+
+  .theme-doctor .card .title {
+    font-size: 0.98rem;
+  }
+
+  .theme-doctor table thead th,
+  .theme-doctor table tbody td {
+    padding: 8px 6px;
+  }
+}

@@ -1,0 +1,88 @@
+.theme-riwayat .hero {
+  background: linear-gradient(135deg, #0b6b87 0%, #0d6efd 100%);
+  color: #fff;
+}
+
+.theme-riwayat .card {
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(12, 36, 45, 0.04);
+  border: 1px solid rgba(13, 34, 48, 0.06);
+}
+
+.theme-riwayat table.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.theme-riwayat table th {
+  background: rgba(11, 107, 135, 0.95);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.theme-riwayat table td {
+  color: #173238;
+}
+
+.theme-riwayat .tag.is-success {
+  background: #e8f8ef;
+  color: #2e8b57;
+  font-weight: 700;
+}
+.theme-riwayat .tag.is-warning {
+  background: #fff7e6;
+  color: #b47000;
+  font-weight: 700;
+}
+.theme-riwayat .tag.is-danger {
+  background: #fff2f2;
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+.theme-riwayat .table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.theme-riwayat table thead th,
+.theme-riwayat table tbody td {
+  white-space: nowrap;
+}
+
+.theme-riwayat .card-content {
+  padding: 12px;
+}
+.theme-riwayat .hero .title {
+  margin-bottom: 0.25rem;
+}
+
+#btnHapus {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .theme-riwayat .hero {
+    padding: 1.25rem 1rem;
+  }
+
+  .theme-riwayat .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .theme-riwayat table thead th,
+  .theme-riwayat table tbody td {
+    padding: 8px 6px;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .theme-riwayat .container {
+    max-width: 1200px;
+  }
+  .theme-riwayat table thead th {
+    font-size: 14px;
+  }
+}
