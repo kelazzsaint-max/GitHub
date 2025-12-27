@@ -10,41 +10,6 @@
    </head>
 
    <body class="section">
-
-      <nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); position: fixed; top: 0; left:0; width: 100%;">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="https://drivonne.apotekcahayaibu.id">
-          <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" width="28" height="28" />
-        </a>
-
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainMenu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="mainMenu" class="navbar-menu">
-        <div class="navbar-start">
-          <a href="../HOME/index.html" class="navbar-item">Home</a>
-          <a href="dokter.html" class="navbar-item">Dashboard</a>
-          <a href="../Pasien/pasien.html" class="navbar-item">Ambil Antrian</a>
-          <a href="../Riwayat/riwayat.html" class="navbar-item">Riwayat</a>
-        </div>
-      </nav>
-
-      <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const burger = document.querySelector(".navbar-burger");
-        const menu = document.getElementById(burger.dataset.target);
-
-        burger.addEventListener("click", () => {
-          burger.classList.toggle("is-active");
-          menu.classList.toggle("is-active");
-        });
-      });
-      </script>
-
       <style>
       .section {
          background:
@@ -57,6 +22,16 @@
          background-color: rgba(255, 255, 255, 0.9);
          }
       </style>
+
+      <nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); position: fixed; top: 0; left:0; width: 100%;">
+         <div class="navbar-brand">
+            <a class="navbar-item" href="/HOME/index.html">
+               ⬅️ Kembali
+            </a>
+         </div>
+      </nav>
+
+
 
       <div class="container">
          <div class="column is-4-tablet-only mt-4">
