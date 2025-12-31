@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Login Dokter</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+      <link rel="icon" type="image/png" href="/HOME/klinik 1.png" />
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   </head>
+
+   <body class="section">
+      <style>
+      .section {
+         background:
+         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+         url('/HOME/klinik3.png') no-repeat center center fixed;
+         height: 100vh;
+         }
+
+      .box {
+         background-color: rgba(255, 255, 255, 0.9);
+         }
+      </style>
+
+      <nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); position: fixed; top: 0; left:0; width: 100%;">
+         <div class="navbar-brand">
+            <a class="navbar-item" href="/HOME/index.html">
+               ⬅️ Kembali
+            </a>
+         </div>
+      </nav>
+
+      <div class="container">
+         <div class="column is-4-tablet-only mt-4">
+            <div class="box">
+               <h1 class="title has-text-centered">Login Dokter</h1>
+               <input id="user" type="text" class="input mb-2" placeholder="Username" />
+               <input id="pass" type="password" class="input mb-3" placeholder="Password" />
+               <button class="button is-primary is-fullwidth" onclick="login()">Login</button>
+               <p id="info" class="has-text-danger mt-2"></p>
+            </div>
+         </div>
+      </div>
+
+      <script src="../data/antriandata.js"></script>
+
+      <script>
+         function login() {
+         let user = document.getElementById("user").value;
+         let pass = document.getElementById("pass").value;
+
+         if (user === "Herman" && pass === "123") {
+            localStorage.setItem("dokterLogin", "true");
+            window.location.href = "dokter.html";
+         } else {
+            document.getElementById("info").innerText = "Username atau password salah.";
+         if (user === "" || pass === "") {
+            document.getElementById("info").innerText = "Username atau password wajib diisi dengan benar.";
+               }
+            }
+         }
+      </script>
+
+   </body>
+</html>

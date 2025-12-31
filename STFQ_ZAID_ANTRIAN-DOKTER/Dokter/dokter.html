@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Dokter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="icon" type="image/png" href="/HOME/klinik 1.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body class="theme-doctor">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); position: fixed; top: 0; left:0; width: 100%;">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://drivonne.apotekcahayaibu.id">
+          <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" width="28" height="28" />
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="mainMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="../HOME/index.html" class="navbar-item">Home</a>
+          <a href="dokter.html" class="navbar-item">Dashboard</a>
+          <a href="../Pasien/pasien.html" class="navbar-item">Ambil Antrian</a>
+          <a href="../Riwayat/riwayat.html" class="navbar-item">Riwayat</a>
+        </div>
+    </nav>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const burger = document.querySelector(".navbar-burger");
+        const menu = document.getElementById(burger.dataset.target);
+
+        burger.addEventListener("click", () => {
+          burger.classList.toggle("is-active");
+          menu.classList.toggle("is-active");
+        });
+      });
+    </script>
+
+    <section class="hero is-primary mt-5">
+      <div class="hero-body">
+        <h1 class="title has-text-centered">Dashboard Dokter</h1>
+      </div>
+    </section>
+
+    <button class="button is-danger is-small ml-3" onclick="logout()">Logout</button>
+
+    <section class="section">
+      <div class="container">
+        <div class="box">
+          <h2 class="title is-4">Daftar Antrian Aktif</h2>
+            <table class="table is-fullwidth is-striped is-hoverable">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama</th>
+                  <th>Umur</th>
+                  <th>JK</th>
+                  <th>Alamat</th>
+                  <th>Keluhan</th>
+                  <th>Poli</th>
+                  <th>Status</th>
+                  <th>Waktu</th>
+                </tr>
+              </thead>
+              <tbody id="tabel"></tbody>
+            </table>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer mt-5" style="position: fixed; bottom: 0; width: 100%; background:rgba(0, 0, 0, 0.3); color: #fff; padding: 1rem 0; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);">
+      <div class="content has-text-centered">
+        <p>&copy; 2025 Klinik Cahaya Ilahi. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../data/antriandata.js"></script>
+    <script src="dokter.js"></script>
+
+  </body>
+</html>
